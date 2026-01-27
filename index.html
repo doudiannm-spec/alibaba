@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里集团招聘 - 居家客服岗位</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --alibaba-orange: #FF6A00;
+            --alibaba-yellow: #FFC107;
+            --alibaba-dark: #1A1A1A;
+            --alibaba-light: #F5F5F5;
+            --alibaba-gray: #666666;
+            --alibaba-white: #FFFFFF;
+            --alibaba-hover: #FF8C3A;
+            --beige-bg: #F9F5EB;
+            --beige-light: #FFF9E6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--alibaba-dark);
+            background-color: var(--beige-bg);
+        }
+        
+        /* 顶部导航 */
+        .header {
+            background-color: var(--alibaba-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            color: var(--alibaba-orange);
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--alibaba-dark);
+        }
+        
+        .logo-text span {
+            color: var(--alibaba-orange);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--alibaba-gray);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--alibaba-orange);
+        }
+        
+        .nav-links a.active {
+            color: var(--alibaba-orange);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--alibaba-orange);
+        }
+        
+        .apply-btn {
+            background-color: var(--alibaba-orange);
+            color: var(--alibaba-white);
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .apply-btn:hover {
+            background-color: var(--alibaba-hover);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--alibaba-dark);
+            cursor: pointer;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(255, 246, 230, 0.95), rgba(255, 246, 230, 0.95)), 
+                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--alibaba-dark);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--alibaba-orange);
+            font-weight: 600;
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--alibaba-gray);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-tagline span {
+            background-color: rgba(255, 106, 0, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background-color: var(--alibaba-orange);
+            color: var(--alibaba-white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--alibaba-hover);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--alibaba-orange);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid var(--alibaba-orange);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 106, 0, 0.1);
+        }
+        
+        /* 主要内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 80px 0 40px;
+            font-size: 2.5rem;
+            color: var(--alibaba-dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--alibaba-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+        
+        /* 职位信息卡片 */
+        .job-info-section {
+            background-color: var(--beige-light);
+            padding: 60px 0;
+            margin-bottom: 60px;
+            border-radius: 10px;
+        }
+        
+        .job-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .info-card {
+            background-color: var(--alibaba-white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--alibaba-orange);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--alibaba-orange);
+            color: var(--alibaba-white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .info-card-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--alibaba-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card-title i {
+            color: var(--alibaba-orange);
+        }
+        
+        .info-card-content {
+            color: var(--alibaba-gray);
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--alibaba-orange);
+            font-weight: 600;
+        }
+        
+        .salary-section {
+            background-color: var(--alibaba-white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+        
+        .salary-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--alibaba-dark);
+        }
+        
+        .salary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .salary-card {
+            background-color: var(--beige-light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .salary-card.day-shift {
+            border-color: var(--alibaba-orange);
+        }
+        
+        .salary-card.night-shift {
+            border-color: #333;
+        }
+        
+        .salary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .salary-type {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .day-shift .salary-type {
+            color: var(--alibaba-orange);
+        }
+        
+        .night-shift .salary-type {
+            color: #333;
+        }
+        
+        .salary-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .day-shift .salary-amount {
+            color: var(--alibaba-orange);
+        }
+        
+        .night-shift .salary-amount {
+            color: #333;
+        }
+        
+        .salary-time {
+            color: var(--alibaba-gray);
+            font-size: 1.1rem;
+        }
+        
+        /* 申请表单 */
+        .apply-form-section {
+            background-color: var(--alibaba-white);
+            padding: 60px 0;
+            border-radius: 10px;
+            margin: 60px 0;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .form-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--alibaba-dark);
+        }
+        
+        .apply-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--alibaba-dark);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--alibaba-orange);
+            box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
+        }
+        
+        textarea.form-input {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            grid-column: 1 / -1;
+            background-color: var(--alibaba-orange);
+            color: var(--alibaba-white);
+            padding: 16px;
+            border-radius: 4px;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--alibaba-hover);
+        }
+        
+        /* 页脚 */
+        .footer {
+            background-color: var(--alibaba-dark);
+            color: var(--alibaba-white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--alibaba-orange);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--alibaba-orange);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-container.active .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--alibaba-white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .apply-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .job-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .salary-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="nav-container" id="navContainer">
+            <a href="#" class="logo">
+                <i class="fas fa-headset logo-icon"></i>
+                <div class="logo-text">阿里<span>招聘</span></div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#job-info">职位详情</a></li>
+                <li><a href="#salary">薪资标准</a></li>
+                <li><a href="#apply">立即申请</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            
+            <a href="#apply" class="apply-btn">立即申请</a>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>在线客服招聘</h1>
+            <div class="hero-subtitle">工作灵活·时间自选·薪资日结</div>
+            <div class="hero-tagline">
+                <span>居家办公</span>
+                <span>手机/电脑均可</span>
+                <span>时间自由</span>
+                <span>日结工资</span>
+            </div>
+            <p>加入阿里巴巴集团居家客服团队，享受灵活的工作时间和丰厚的薪资待遇。无论你是学生、全职妈妈，还是寻求兼职的上班族，这里都有适合你的位置。</p>
+            <div class="hero-btns">
+                <a href="#apply" class="btn-primary">立即申请</a>
+                <a href="#job-info" class="btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 职位详情 -->
+    <main class="container">
+        <h2 class="section-title" id="job-info">居家客服职位详情</h2>
+        <p class="section-subtitle">工作内容清晰，时间自由灵活，薪资透明日结</p>
+        
+        <div class="job-info-section">
+            <div class="job-info-grid">
+                <div class="info-card">
+                    <div class="info-card-number">1</div>
+                    <h3 class="info-card-title"><i class="fas fa-comments"></i> 在线客服工作</h3>
+                    <p class="info-card-content">接待客户、讲解产品、解决疑问、促进成交、以及处理售前售后问题。我们需要你具备良好的沟通能力和服务意识，为客户提供专业、友好的服务体验。</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-number">2</div>
+                    <h3 class="info-card-title"><i class="fas fa-laptop-house"></i> 工作方式</h3>
+                    <p class="info-card-content">居家办公，手机/电脑均可（<span class="highlight">电脑操作更为方便</span>）。我们提供完整的线上培训和技术支持，让你在家也能高效工作。</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-number">3</div>
+                    <h3 class="info-card-title"><i class="fas fa-tasks"></i> 工作内容</h3>
+                    <p class="info-card-content">负责商家平台售前/售后客服工作。包括解答客户咨询、处理订单问题、跟进售后事宜、收集用户反馈等。</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-number">4</div>
+                    <h3 class="info-card-title"><i class="fas fa-clock"></i> 工作时间</h3>
+                    <p class="info-card-content">每日工作<span class="highlight">1-8小时</span>（不超过8小时），时间自选。你可以根据自己的日程安排灵活选择工作时间，真正实现工作与生活的平衡。</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-number">5</div>
+                    <h3 class="info-card-title"><i class="fas fa-graduation-cap"></i> 岗前培训</h3>
+                    <p class="info-card-content">上岗前需要培训三天+考勤打卡七次。培训时间<span class="highlight">3天（每天2小时）</span>，我们会提供全面的产品知识、客服技巧和系统操作培训。</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-number">6</div>
+                    <h3 class="info-card-title"><i class="fas fa-money-bill-wave"></i> 工资结算</h3>
+                    <p class="info-card-content">工资<span class="highlight">微信/支付宝/银行卡日结</span>。当天工作，当天结算，资金安全有保障，让你工作更放心。</p>
+                </div>
+            </div>
+            
+            <div class="salary-section" id="salary">
+                <h3 class="salary-title">薪资标准</h3>
+                <div class="salary-cards">
+                    <div class="salary-card day-shift">
+                        <div class="salary-type">白班薪资</div>
+                        <div class="salary-amount">30元/小时</div>
+                        <div class="salary-time">工作时间：9:00 - 18:00</div>
+                        <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">适合白天有时间的求职者，工作时间灵活可自选</p>
+                    </div>
+                    
+                    <div class="salary-card night-shift">
+                        <div class="salary-type">夜班薪资</div>
+                        <div class="salary-amount">40元/小时</div>
+                        <div class="salary-time">工作时间：18:00 - 次日2:00</div>
+                        <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">适合晚上有时间的求职者，薪资更高，时间灵活</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 申请表单 -->
+        <div class="apply-form-section" id="apply">
+            <div class="form-container">
+                <h2 class="form-title">立即申请居家客服岗位</h2>
+                <form class="apply-form" id="applicationForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">姓名</label>
+                        <input type="text" id="name" class="form-input" placeholder="请输入您的姓名" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="phone">手机号码</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="请输入您的手机号码" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">电子邮箱</label>
+                        <input type="email" id="email" class="form-input" placeholder="请输入您的电子邮箱" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="experience">相关经验</label>
+                        <select id="experience" class="form-input" required>
+                            <option value="">请选择客服经验</option>
+                            <option value="none">无经验</option>
+                            <option value="less-1">1年以下</option>
+                            <option value="1-3">1-3年</option>
+                            <option value="3plus">3年以上</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="shift">班次偏好</label>
+                        <select id="shift" class="form-input" required>
+                            <option value="">请选择班次</option>
+                            <option value="day">白班 (9:00-18:00)</option>
+                            <option value="night">夜班 (18:00-次日2:00)</option>
+                            <option value="both">两者皆可</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="hours">每日可工作时长</label>
+                        <select id="hours" class="form-input" required>
+                            <option value="">请选择工作时长</option>
+                            <option value="1-3">1-3小时</option>
+                            <option value="3-5">3-5小时</option>
+                            <option value="5-8">5-8小时</option>
+                            <option value="8plus">8小时以上</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="form-label" for="message">申请理由/自我介绍</label>
+                        <textarea id="message" class="form-input" placeholder="请简要介绍自己并说明申请理由..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">提交申请</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>阿里巴巴集团</h3>
+                <p>阿里巴巴集团致力于让天下没有难做的生意，通过数字技术帮助中小企业、消费者和合作伙伴实现发展。</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>居家客服招聘</h3>
+                <ul class="footer-links">
+                    <li><a href="#job-info">职位详情</a></li>
+                    <li><a href="#salary">薪资标准</a></li>
+                    <li><a href="#apply">申请流程</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>联系我们</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> kefu-recruit@alibaba.com</li>
+                    <li><i class="fas fa-phone"></i> 400-800-8800 (转居家客服)</li>
+                    <li><i class="fas fa-clock"></i> 工作日 9:00-18:00</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 浙江省杭州市西湖区</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>工资结算方式</h3>
+                <ul class="footer-links">
+                    <li><i class="fab fa-weixin"></i> 微信支付</li>
+                    <li><i class="fab fa-alipay"></i> 支付宝</li>
+                    <li><i class="fas fa-credit-card"></i> 银行卡转账</li>
+                    <li>当日工作，次日结算</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 阿里巴巴集团 版权所有 | 浙ICP备2023012345号</p>
+            <p style="margin-top: 10px; font-size: 12px;">居家客服招聘为阿里巴巴集团官方招聘项目，谨防虚假招聘信息</p>
+        </div>
+    </footer>
+
+    <script>
+        // 获取DOM元素
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navContainer = document.getElementById('navContainer');
+        const applicationForm = document.getElementById('applicationForm');
+
+        // 移动端菜单切换
+        mobileMenuBtn.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+        });
+
+        // 表单提交处理
+        applicationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const shift = document.getElementById('shift').value;
+            
+            // 表单验证
+            if (!name || !phone) {
+                alert('请填写姓名和手机号码');
+                return;
+            }
+            
+            // 显示成功消息
+            alert(`感谢 ${name} 申请阿里巴巴居家客服岗位！\n\n我们已收到您的申请，招聘专员将在1-3个工作日内通过电话 ${phone} 与您联系，请保持手机畅通。\n\n您选择的班次：${document.getElementById('shift').options[document.getElementById('shift').selectedIndex].text}`);
+            
+            // 在实际应用中，这里会将数据发送到服务器
+            // 例如：fetch('/api/apply', { method: 'POST', body: formData });
+            
+            // 重置表单
+            applicationForm.reset();
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动端菜单
+                    navContainer.classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 更新导航栏活动状态
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            // 简化版本：滚动时高亮首页
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' && scrollPosition < 500) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
