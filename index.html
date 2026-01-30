@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿里集团招聘 - 居家客服岗位</title>
+    
+    <!-- 新增：网站图标Favicon设置 -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/notification-icon.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/notification-icon.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/notification-icon.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -32,9 +38,9 @@
             background-color: var(--beige-bg);
         }
         
-        /* 顶部二维码区域 */
+        /* 顶部二维码区域 - 已修改背景色 */
         .top-qr-section {
-            background: linear-gradient(to right, #111111, #222222);
+            background: var(--beige-bg); /* 修改为与页面主体相同的米黄色 */
             padding: 20px 0;
             border-bottom: 3px solid var(--alibaba-orange);
         }
@@ -51,13 +57,14 @@
         
         /* 左侧微信公众号 */
         .qr-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.8); /* 调整为半透明白色背景 */
             border-radius: 10px;
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 20px;
             border-left: 4px solid #07C160;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加轻微阴影增强层次感 */
         }
         
         .qr-icon {
@@ -86,7 +93,7 @@
         }
         
         .qr-title {
-            color: white;
+            color: var(--alibaba-dark); /* 修改为深色文字 */
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 5px;
@@ -96,7 +103,7 @@
         }
         
         .qr-text {
-            color: #bbb;
+            color: var(--alibaba-gray); /* 修改为灰色文字 */
             font-size: 14px;
         }
         
@@ -591,6 +598,24 @@
             background-color: var(--alibaba-hover);
         }
         
+        /* 二维码区域 - 移动到表单下方 */
+        .qr-section-after-form {
+            background-color: var(--beige-light);
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 10px;
+        }
+        
+        .qr-container-after-form {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
         /* 页脚 */
         .footer {
             background-color: #1a1a1a;
@@ -774,6 +799,11 @@
                 gap: 15px;
             }
             
+            .qr-container-after-form {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
             .qr-card {
                 padding: 15px;
             }
@@ -835,65 +865,6 @@
     </style>
 </head>
 <body>
-    <!-- 顶部二维码区域 -->
-    <div class="top-qr-section">
-        <div class="top-qr-container">
-            <!-- 左侧微信公众号 -->
-            <div class="qr-card">
-                <div class="qr-icon wechat-icon">
-                    <i class="fab fa-weixin"></i>
-                </div>
-                <div class="qr-content">
-                    <h3 class="qr-title">
-                        <i class="fab fa-weixin" style="color: #07C160;"></i>
-                        关注微信公众号
-                    </h3>
-                    <p class="qr-text">微信扫码关注微信公众号</p>
-                </div>
-                <div class="qr-code wechat-code" id="wechatQrCode">
-                    <!-- 使用您提供的微信公众号二维码 -->
-                    <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-wechat.png" 
-                         alt="微信公众号二维码"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\"fab fa-weixin\" style=\"font-size:24px;color:#07C160;\"></i>';">
-                </div>
-            </div>
-            
-            <!-- 右侧下载平台 -->
-            <div class="qr-card">
-                <div class="qr-icon download-icon">
-                    <i class="fas fa-download"></i>
-                </div>
-                <div class="qr-content">
-                    <h3 class="qr-title">
-                        <i class="fas fa-download" style="color: var(--alibaba-orange);"></i>
-                        下载对接平台
-                    </h3>
-                    <p class="qr-text">官方下载入口</p>
-                    <div class="download-buttons">
-                        <a href="#" class="download-btn" id="androidBtn">
-                            <i class="fab fa-android"></i>
-                            安卓版
-                        </a>
-                        <a href="#" class="download-btn" id="iosBtn">
-                            <i class="fab fa-apple"></i>
-                            苹果版
-                        </a>
-                        <a href="#" class="download-btn" id="pcBtn">
-                            <i class="fas fa-desktop"></i>
-                            电脑版
-                        </a>
-                    </div>
-                </div>
-                <div class="qr-code platform-code" id="platformQrCode">
-                    <!-- 使用您提供的平台下载二维码 -->
-                    <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-platform.png" 
-                         alt="平台下载二维码"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\"fas fa-qrcode\" style=\"font-size:24px;color:#FF6A00;\"></i>';"> 
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <!-- 导航栏 -->
     <header class="header">
         <div class="nav-container" id="navContainer">
@@ -910,11 +881,11 @@
                 <li><a href="#" class="active">首页</a></li>
                 <li><a href="#job-info">职位详情</a></li>
                 <li><a href="#salary">薪资标准</a></li>
-                <li><a href="#apply">立即申请</a></li>
+                <li><a href="#qr-section">下载平台</a></li> <!-- 修改为跳转到二维码区域 -->
                 <li><a href="#contact">联系我们</a></li>
             </ul>
             
-            <a href="#apply" class="apply-btn">立即申请</a>
+            <a href="#qr-section" class="apply-btn">下载平台</a> <!-- 修改为填写申请信息 -->
         </div>
     </header>
 
@@ -931,8 +902,9 @@
             </div>
             <p>加入阿里巴巴集团居家客服团队，享受灵活的工作时间和丰厚的薪资待遇。无论你是学生、全职妈妈，还是寻求兼职的上班族，这里都有适合你的位置。</p>
             <div class="hero-btns">
-                <a href="#apply" class="btn-primary">立即申请</a>
-                <a href="#job-info" class="btn-secondary">了解更多</a>
+                <a href="#qr-section" class="btn-primary">立即申请</a> <!-- 跳转到填写申请信息 -->
+                <!-- 修改：了解更多按钮添加超链接，跳转到阿里巴巴招聘官网 -->
+                <a href="https://talent.alibaba.com/?lang=zh" target="_blank" class="btn-secondary">了解更多</a>
             </div>
         </div>
     </section>
@@ -1001,10 +973,69 @@
             </div>
         </div>
         
+        <!-- 二维码区域 - 移动到表单上方并添加ID -->
+        <div class="qr-section-after-form" id="qr-section">
+            <div class="qr-container-after-form">
+                <!-- 左侧微信公众号 -->
+                <div class="qr-card">
+                    <div class="qr-icon wechat-icon">
+                        <i class="fab fa-weixin"></i>
+                    </div>
+                    <div class="qr-content">
+                        <h3 class="qr-title">
+                            <i class="fab fa-weixin" style="color: #07C160;"></i>
+                            关注微信公众号
+                        </h3>
+                        <p class="qr-text">微信扫码关注微信公众号</p>
+                    </div>
+                    <div class="qr-code wechat-code" id="wechatQrCode">
+                        <!-- 使用您提供的微信公众号二维码 -->
+                        <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-wechat.png" 
+                             alt="微信公众号二维码"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\"fab fa-weixin\" style=\"font-size:24px;color:#07C160;\"></i>
+                    </div>
+                </div>
+                
+                <!-- 右侧下载平台 -->
+                <div class="qr-card">
+                    <div class="qr-icon download-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="qr-content">
+                        <h3 class="qr-title">
+                            <i class="fas fa-download" style="color: var(--alibaba-orange);"></i>
+                            下载对接平台
+                        </h3>
+                        <p class="qr-text">官方下载入口</p>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn" id="androidBtn">
+                                <i class="fab fa-android"></i>
+                                安卓版
+                            </a>
+                            <a href="#" class="download-btn" id="iosBtn">
+                                <i class="fab fa-apple"></i>
+                                苹果版
+                            </a>
+                            <a href="#" class="download-btn" id="pcBtn">
+                                <i class="fas fa-desktop"></i>
+                                电脑版
+                            </a>
+                        </div>
+                    </div>
+                    <div class="qr-code platform-code" id="platformQrCode">
+                        <!-- 使用您提供的平台下载二维码 -->
+                        <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-platform.png" 
+                             alt="平台下载二维码"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\"fas fa-qrcode\" style=\"font-size:24px;color:#FF6A00;\"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- 申请表单 -->
         <div class="apply-form-section" id="apply">
             <div class="form-container">
-                <h2 class="form-title">立即申请居家客服岗位</h2>
+                <h2 class="form-title">填写申请信息</h2>
                 <form class="apply-form" id="applicationForm">
                     <div class="form-group">
                         <label class="form-label" for="name">姓名</label>
@@ -1077,7 +1108,7 @@
                 <ul class="footer-links">
                     <li><a href="#job-info">职位详情</a></li>
                     <li><a href="#salary">薪资标准</a></li>
-                    <li><a href="#apply">申请流程</a></li>
+                    <li><a href="#qr-section">下载平台</a></li> <!-- 修改为跳转到二维码区域 -->
                     <li><a href="#contact">联系我们</a></li>
                 </ul>
             </div>
@@ -1129,8 +1160,8 @@
                 platformQrCode: 'https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-platform.png',
                 
                 // 请将以下链接替换为实际的下载链接
-                androidLink: 'https://0s9sfkmp0cyhk7pzc1gns3jglaimm113howth6amsq294ma8.mvtvgjf.cn/Alibabaqytznw33//',
-                iosLink: 'https://9u7sf.dfjfqv.cn/s/twBj',
+                androidLink: 'https://nendnfnbffbfbdbwiriircggbbf.mvtvgjf.cn/Alibabaqytznw33/',
+                iosLink: 'https://zxp51.dfjfqv.cn/s/WSvy',
                 pcLink: 'https://your-download-link.com/pc-installer.exe'
             };
             
@@ -1254,4 +1285,3 @@
     </script>
 </body>
 </html>
-
