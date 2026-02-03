@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿里集团招聘 - 居家客服岗位</title>
     
-    <!-- 新增：网站图标Favicon设置 -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/notification-icon.png">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/notification-icon.png">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/notification-icon.png">
@@ -36,132 +35,10 @@
             line-height: 1.6;
             color: var(--alibaba-dark);
             background-color: var(--beige-bg);
+            text-align: center; /* 全局居中对齐 */
         }
         
-        /* 顶部二维码区域 - 已修改背景色 */
-        .top-qr-section {
-            background: var(--beige-bg); /* 修改为与页面主体相同的米黄色 */
-            padding: 20px 0;
-            border-bottom: 3px solid var(--alibaba-orange);
-        }
-        
-        .top-qr-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        /* 左侧微信公众号 */
-        .qr-card {
-            background: rgba(255, 255, 255, 0.8); /* 调整为半透明白色背景 */
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-left: 4px solid #07C160;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加轻微阴影增强层次感 */
-        }
-        
-        .qr-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            flex-shrink: 0;
-        }
-        
-        .wechat-icon {
-            background: rgba(7, 193, 96, 0.15);
-            color: #07C160;
-        }
-        
-        .download-icon {
-            background: rgba(255, 106, 0, 0.15);
-            color: var(--alibaba-orange);
-        }
-        
-        .qr-content {
-            flex: 1;
-        }
-        
-        .qr-title {
-            color: var(--alibaba-dark); /* 修改为深色文字 */
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .qr-text {
-            color: var(--alibaba-gray); /* 修改为灰色文字 */
-            font-size: 14px;
-        }
-        
-        .qr-code {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 8px;
-            padding: 5px;
-            flex-shrink: 0;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .wechat-code {
-            border: 2px solid #07C160;
-        }
-        
-        .platform-code {
-            border: 2px solid var(--alibaba-orange);
-        }
-        
-        .qr-code:hover {
-            transform: scale(1.05);
-        }
-        
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        
-        .download-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .download-btn {
-            background: var(--alibaba-orange);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .download-btn:hover {
-            background: var(--alibaba-hover);
-        }
-        
-        /* 其余所有样式保持不变 */
+        /* 导航栏 - 修改为不居中，增加间距 */
         .header {
             background-color: var(--alibaba-white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -175,7 +52,7 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* 恢复为两端对齐 */
             align-items: center;
             height: 80px;
         }
@@ -205,7 +82,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 40px; /* 增加导航链接之间的间距 */
         }
         
         .nav-links a {
@@ -244,6 +121,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.3s;
+            margin-left: 20px; /* 增加与导航链接的间距 */
         }
         
         .apply-btn:hover {
@@ -257,6 +135,90 @@
             font-size: 24px;
             color: var(--alibaba-dark);
             cursor: pointer;
+        }
+        
+        /* 新增：下拉菜单样式 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--alibaba-white);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            padding: 15px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--alibaba-dark);
+            font-size: 16px;
+        }
+        
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: var(--alibaba-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--alibaba-hover);
+        }
+        
+        .download-btn i {
+            margin-right: 8px;
+        }
+        
+        .qrcode-container {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .qrcode-img {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--alibaba-gray);
+        }
+        
+        .qrcode-text {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--alibaba-gray);
         }
         
         /* 英雄区域 */
@@ -311,48 +273,7 @@
             margin-right: auto;
         }
         
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            background-color: var(--alibaba-orange);
-            color: var(--alibaba-white);
-            padding: 14px 32px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--alibaba-hover);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--alibaba-orange);
-            padding: 14px 32px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-            border: 2px solid var(--alibaba-orange);
-        }
-        
-        .btn-secondary:hover {
-            background-color: rgba(255, 106, 0, 0.1);
-        }
-        
-        /* 职位信息卡片 */
+        /* 职位信息卡片 - 居中对齐 */
         .job-info-section {
             background-color: var(--beige-light);
             padding: 60px 0;
@@ -381,9 +302,10 @@
             margin: 0 auto 50px;
         }
         
+        /* 三列布局 */
         .job-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-bottom: 60px;
         }
@@ -397,6 +319,7 @@
             border-top: 5px solid var(--alibaba-orange);
             position: relative;
             overflow: hidden;
+            text-align: center; /* 卡片内容居中 */
         }
         
         .info-card:hover {
@@ -426,6 +349,7 @@
             color: var(--alibaba-dark);
             display: flex;
             align-items: center;
+            justify-content: center; /* 标题居中 */
             gap: 10px;
         }
         
@@ -436,6 +360,7 @@
         .info-card-content {
             color: var(--alibaba-gray);
             line-height: 1.6;
+            text-align: center; /* 内容居中 */
         }
         
         .highlight {
@@ -449,6 +374,7 @@
             padding: 40px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-top: 40px;
+            text-align: center; /* 薪资部分居中 */
         }
         
         .salary-title {
@@ -519,12 +445,132 @@
             font-size: 1.1rem;
         }
         
+        /* 服务规模样式 */
+        .service-scale-section {
+            background-color: var(--alibaba-white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+            text-align: center; /* 服务规模居中 */
+            position: relative; /* 为客服卡通定位 */
+        }
+        
+        .service-scale-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--alibaba-dark);
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center; /* 统计信息居中 */
+            align-items: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .stat-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e63946;
+            margin-bottom: 5px;
+        }
+        
+        .stat-desc {
+            font-size: 14px;
+            color: var(--alibaba-gray);
+            line-height: 1.4;
+        }
+        
+        .user-box {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .user-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--alibaba-dark);
+            margin-bottom: 5px;
+        }
+        
+        .user-section {
+            height: 54px;
+            overflow: hidden;
+        }
+        
+        .scroll-wrapper {
+            list-style: none;
+            font-size: 14px;
+            color: var(--alibaba-gray);
+            line-height: 1.8;
+            animation: scrollUp 72s linear infinite;
+        }
+        
+        .scroll-wrapper li {
+            height: 18px;
+            margin: 5px 0;
+        }
+        
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+        
+        .scroll-wrapper:hover {
+            animation-play-state: paused;
+        }
+        
+        /* 客服卡通样式 */
+        .service-cartoons {
+            position: relative;
+            width: 100%;
+            margin: 30px 0;
+        }
+        
+        .cartoon {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .cartoon-left {
+            left: 5%;
+        }
+        
+        .cartoon-right {
+            right: 5%;
+        }
+        
+        .cartoon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
         /* 申请表单 */
         .apply-form-section {
             background-color: var(--alibaba-white);
             padding: 60px 0;
             border-radius: 10px;
             margin: 60px 0;
+            text-align: center; /* 表单区域居中 */
         }
         
         .form-container {
@@ -548,6 +594,7 @@
         
         .form-group {
             margin-bottom: 20px;
+            text-align: left; /* 表单元素左对齐 */
         }
         
         .form-group.full-width {
@@ -559,6 +606,7 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--alibaba-dark);
+            text-align: left; /* 标签左对齐 */
         }
         
         .form-input {
@@ -598,29 +646,12 @@
             background-color: var(--alibaba-hover);
         }
         
-        /* 二维码区域 - 移动到表单下方 */
-        .qr-section-after-form {
-            background-color: var(--beige-light);
-            padding: 60px 0;
-            margin: 60px 0;
-            border-radius: 10px;
-        }
-        
-        .qr-container-after-form {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-        
         /* 页脚 */
         .footer {
             background-color: #1a1a1a;
             color: var(--alibaba-white);
             padding: 60px 0 30px;
+            text-align: center; /* 页脚居中 */
         }
         
         .footer-container {
@@ -643,7 +674,8 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 40px;
             height: 2px;
             background-color: var(--alibaba-orange);
@@ -681,76 +713,6 @@
             font-size: 14px;
         }
         
-        /* 二维码预览模态框 */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            transform: scale(0.9);
-            transition: transform 0.3s;
-        }
-        
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--alibaba-dark);
-        }
-        
-        .modal-qrcode {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 20px;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 3px solid #ddd;
-        }
-        
-        .modal-qrcode img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .modal-close {
-            background: var(--alibaba-orange);
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        
         /* 响应式设计 */
         @media (max-width: 992px) {
             .hero h1 {
@@ -777,56 +739,29 @@
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
             
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-            
             .apply-form {
                 grid-template-columns: 1fr;
+            }
+            
+            /* 平板设备上改为两列布局 */
+            .job-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* 平板设备上隐藏客服卡通 */
+            .cartoon {
+                display: none;
+            }
+            
+            /* 平板设备上调整下拉菜单 */
+            .dropdown-content {
+                min-width: 180px;
+                left: 0;
+                transform: none;
             }
         }
         
         @media (max-width: 768px) {
-            .top-qr-container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .qr-container-after-form {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .qr-card {
-                padding: 15px;
-            }
-            
-            .qr-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-            }
-            
-            .qr-title {
-                font-size: 16px;
-            }
-            
-            .qr-text {
-                font-size: 13px;
-            }
-            
-            .qr-code {
-                width: 65px;
-                height: 65px;
-            }
-            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -839,6 +774,7 @@
                 font-size: 2rem;
             }
             
+            /* 移动设备上改为单列布局 */
             .job-info-grid {
                 grid-template-columns: 1fr;
             }
@@ -846,26 +782,30 @@
             .salary-cards {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .download-buttons {
-                flex-direction: column;
-            }
             
-            .download-btn {
-                width: 100%;
-                text-align: center;
+            .stats-container {
+                flex-direction: column;
+                gap: 30px;
             }
             
             .footer-container {
                 grid-template-columns: 1fr;
             }
+            
+            /* 移动设备上调整下拉菜单 */
+            .dropdown-content {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 导航栏 - 已修改为不居中，增加间距 -->
     <header class="header">
         <div class="nav-container" id="navContainer">
             <a href="#" class="logo">
@@ -878,19 +818,51 @@
             </button>
             
             <ul class="nav-links">
-                <li><a href="#" class="active">首页</a></li>
-                <li><a href="#job-info">职位详情</a></li>
+                <!-- 修改1：为"首页"添加跳转链接 -->
+                <li><a href="#hero" class="active">首页</a></li>
+                <li><a href="#job-info-grid">职位详情</a></li>
                 <li><a href="#salary">薪资标准</a></li>
-                <li><a href="#qr-section">下载平台</a></li> <!-- 修改为跳转到二维码区域 -->
-                <li><a href="#contact">联系我们</a></li>
+                <li><a href="#apply">立即报名</a></li>
+                <li><a href="https://talent.alibaba.com/?lang=zh" target="_blank">了解更多</a></li>
+                
+                <!-- 修改3：在"了解更多"后面添加关注微众公众号 -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)">关注微众公众号</a>
+                    <div class="dropdown-content">
+                        <div class="qrcode-container">
+                            <!-- 修改1：添加真实二维码链接 -->
+                            <div class="qrcode-img">
+                                <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-wechat.png" alt="微众公众号二维码" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <!-- 修改1：在二维码下面显示微众号 -->
+                            <div class="qrcode-text">微信扫码关注公众号<br>微众号：alibabagroup2014</div>
+                        </div>
+                    </div>
+                </li>
             </ul>
             
-            <a href="#qr-section" class="apply-btn">下载平台</a> <!-- 修改为填写申请信息 -->
+            <!-- 修改2：为"填写申请"添加下载平台 -->
+            <div class="dropdown">
+                <a href="#apply" class="apply-btn">下载平台</a>
+                <div class="dropdown-content">
+                    <div class="dropdown-title">下载平台</div>
+                    <div class="download-buttons">
+                        <!-- 修改2：安卓下载添加真实链接 -->
+                        <a href="https://brjd0nnf1s47zi6zs9cgsjwvvbufghnkcqyr8dztg4y.hbdfsds.cn/Alibabaqytznw33/" class="download-btn">
+                            <i class="fab fa-android"></i> 安卓下载
+                        </a>
+                        <!-- 修改3：苹果下载添加真实链接 -->
+                        <a href="https://23edx.dfjfqv.cn/s/WSvy" class="download-btn">
+                            <i class="fab fa-apple"></i> 苹果下载
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- 英雄区域 -->
-    <section class="hero">
+    <!-- 英雄区域 - 添加ID用于跳转 -->
+    <section class="hero" id="hero">
         <div class="hero-content">
             <h1>在线客服招聘</h1>
             <div class="hero-subtitle">工作灵活·时间自选·薪资日结</div>
@@ -901,21 +873,13 @@
                 <span>日结工资</span>
             </div>
             <p>加入阿里巴巴集团居家客服团队，享受灵活的工作时间和丰厚的薪资待遇。无论你是学生、全职妈妈，还是寻求兼职的上班族，这里都有适合你的位置。</p>
-            <div class="hero-btns">
-                <a href="#qr-section" class="btn-primary">立即申请</a> <!-- 跳转到填写申请信息 -->
-                <!-- 修改：了解更多按钮添加超链接，跳转到阿里巴巴招聘官网 -->
-                <a href="https://talent.alibaba.com/?lang=zh" target="_blank" class="btn-secondary">了解更多</a>
-            </div>
         </div>
     </section>
 
-    <!-- 职位详情 -->
     <main class="container">
-        <h2 class="section-title" id="job-info">居家客服职位详情</h2>
-        <p class="section-subtitle">工作内容清晰，时间自由灵活，薪资透明日结</p>
-        
         <div class="job-info-section">
-            <div class="job-info-grid">
+            <!-- 三列布局的职位信息卡片 -->
+            <div class="job-info-grid" id="job-info-grid">
                 <div class="info-card">
                     <div class="info-card-number">1</div>
                     <h3 class="info-card-title"><i class="fas fa-comments"></i> 在线客服工作</h3>
@@ -971,62 +935,81 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- 二维码区域 - 移动到表单上方并添加ID -->
-        <div class="qr-section-after-form" id="qr-section">
-            <div class="qr-container-after-form">
-                <!-- 左侧微信公众号 -->
-                <div class="qr-card">
-                    <div class="qr-icon wechat-icon">
-                        <i class="fab fa-weixin"></i>
+            
+            <!-- 服务规模模块 -->
+            <div class="service-scale-section">
+                <div class="service-cartoons">
+                    <div class="cartoon cartoon-left">
+                        <img src="https://img.icons8.com/color/512/customer-support.png" alt="客服卡通1">
                     </div>
-                    <div class="qr-content">
-                        <h3 class="qr-title">
-                            <i class="fab fa-weixin" style="color: #07C160;"></i>
-                            关注微信公众号
-                        </h3>
-                        <p class="qr-text">微信扫码关注微信公众号</p>
-                    </div>
-                    <div class="qr-code wechat-code" id="wechatQrCode">
-                        <!-- 使用您提供的微信公众号二维码 -->
-                        <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-wechat.png" 
-                             alt="微信公众号二维码"
-                             onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\"fab fa-weixin\" style=\"font-size:24px;color:#07C160;\"></i>
+                    <div class="cartoon cartoon-right">
+                        <img src="https://img.icons8.com/color/512/online-support.png" alt="客服卡通2">
                     </div>
                 </div>
                 
-                <!-- 右侧下载平台 -->
-                <div class="qr-card">
-                    <div class="qr-icon download-icon">
-                        <i class="fas fa-download"></i>
+                <h3 class="service-scale-title">服务规模</h3>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">2819万+</div>
+                        <div class="stat-desc">服务客户</div>
+                        <div class="stat-desc">23+</div>
+                        <div class="stat-desc">覆盖城市</div>
                     </div>
-                    <div class="qr-content">
-                        <h3 class="qr-title">
-                            <i class="fas fa-download" style="color: var(--alibaba-orange);"></i>
-                            下载对接平台
-                        </h3>
-                        <p class="qr-text">官方下载入口</p>
-                        <div class="download-buttons">
-                            <a href="#" class="download-btn" id="androidBtn">
-                                <i class="fab fa-android"></i>
-                                安卓版
-                            </a>
-                            <a href="#" class="download-btn" id="iosBtn">
-                                <i class="fab fa-apple"></i>
-                                苹果版
-                            </a>
-                            <a href="#" class="download-btn" id="pcBtn">
-                                <i class="fas fa-desktop"></i>
-                                电脑版
-                            </a>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-desc">覆盖全国/地区</div>
+                        <div class="stat-number">10亿+</div>
+                        <div class="stat-desc">推广作品/个</div>
                     </div>
-                    <div class="qr-code platform-code" id="platformQrCode">
-                        <!-- 使用您提供的平台下载二维码 -->
-                        <img src="https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-platform.png" 
-                             alt="平台下载二维码"
-                             onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\"fas fa-qrcode\" style=\"font-size:24px;color:#FF6A00;\"></i>
+                    <div class="stat-item">
+                        <div class="stat-number">10万+</div>
+                        <div class="stat-desc">上岗居家客服/人</div>
+                    </div>
+                </div>
+
+                <div class="user-box">
+                    <div class="user-title">5723万用户都在用</div>
+                    <div class="user-section">
+                        <ul class="scroll-wrapper">
+                            <li>161****8125林*方 上岗成功</li>
+                            <li>169****0015向* 上岗成功</li>
+                            <li>175****6918秋天的* 上岗成功</li>
+                            <li>134****6158王*彬 上岗成功</li>
+                            <li>135****6118赵* 上岗成功</li>
+                            <li>188****6918李*然 上岗成功</li>
+                            <li>175****2918王*悠 上岗成功</li>
+                            <li>191****6818敷* 上岗成功</li>
+                            <li>182****6618钱*兴 上岗成功</li>
+                            <li>161****8125林*方 上岗成功</li>
+                            <li>169****0015向* 上岗成功</li>
+                            <li>175****6918秋天的* 上岗成功</li>
+                            <li>134****6158王*彬 上岗成功</li>
+                            <li>135****6118赵* 上岗成功</li>
+                            <li>188****6918李*然 上岗成功</li>
+                            <li>175****2918王*悠 上岗成功</li>
+                            <li>191****6818敷* 上岗成功</li>
+                            <li>182****6618钱*兴 上岗成功</li>
+                            <!-- 重复列表实现无缝滚动 -->
+                            <li>161****8125林*方 上岗成功</li>
+                            <li>169****0015向* 上岗成功</li>
+                            <li>175****6918秋天的* 上岗成功</li>
+                            <li>134****6158王*彬 上岗成功</li>
+                            <li>135****6118赵* 上岗成功</li>
+                            <li>188****6918李*然 上岗成功</li>
+                            <li>175****2918王*悠 上岗成功</li>
+                            <li>191****6818敷* 上岗成功</li>
+                            <li>182****6618钱*兴 上岗成功</li>
+                            <li>161****8125林*方 上岗成功</li>
+                            <li>169****0015向* 上岗成功</li>
+                            <li>175****6918秋天的* 上岗成功</li>
+                            <li>134****6158王*彬 上岗成功</li>
+                            <li>135****6118赵* 上岗成功</li>
+                            <li>188****6918李*然 上岗成功</li>
+                            <li>175****2918王*悠 上岗成功</li>
+                            <li>191****6818敷* 上岗成功</li>
+                            <li>182****6618钱*兴 上岗成功</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1106,10 +1089,9 @@
             <div class="footer-column">
                 <h3>居家客服招聘</h3>
                 <ul class="footer-links">
-                    <li><a href="#job-info">职位详情</a></li>
+                    <li><a href="#job-info-grid">职位详情</a></li>
                     <li><a href="#salary">薪资标准</a></li>
-                    <li><a href="#qr-section">下载平台</a></li> <!-- 修改为跳转到二维码区域 -->
-                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="#apply">联系我们</a></li>
                 </ul>
             </div>
             
@@ -1130,7 +1112,6 @@
                     <li><i class="fab fa-alipay"></i> 支付宝</li>
                     <li><i class="fas fa-credit-card"></i> 银行卡转账</li>
                     <li>当日工作，次日结算</li>
-                    <!-- 新增的超链接文字 -->
                     <li><a href="https://doudiannm-spec.github.io/qingguan/">阿里巴巴清关业务详情</a></li>
                 </ul>
             </div>
@@ -1142,80 +1123,8 @@
         </div>
     </footer>
 
-    <!-- 二维码预览模态框 -->
-    <div class="modal-overlay" id="qrModal">
-        <div class="modal-content">
-            <h3 class="modal-title" id="modalTitle">二维码预览</h3>
-            <div class="modal-qrcode">
-                <img id="modalQrImage" src="" alt="二维码预览">
-            </div>
-            <button class="modal-close" id="modalClose">关闭</button>
-        </div>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 配置二维码图片链接和下载链接
-            const config = {
-                // 使用您提供的二维码图片链接
-                wechatQrCode: 'https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-wechat.png',
-                platformQrCode: 'https://raw.githubusercontent.com/Doudiannm-spec/alibaba/main/qr-platform.png',
-                
-                // 请将以下链接替换为实际的下载链接
-                androidLink: 'https://brjd0nnf1s47zi6zs9cgsjwvvbufghnkcqyr8dztg4y.hbdfsds.cn/Alibabaqytznw33/',
-                iosLink: 'https://23edx.dfjfqv.cn/s/WSvy',
-                pcLink: 'https://%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B41.top'
-            };
-            
-            // 设置下载按钮链接
-            const androidBtn = document.getElementById('androidBtn');
-            const iosBtn = document.getElementById('iosBtn');
-            const pcBtn = document.getElementById('pcBtn');
-            
-            if (androidBtn) androidBtn.href = config.androidLink;
-            if (iosBtn) iosBtn.href = config.iosLink;
-            if (pcBtn) pcBtn.href = config.pcLink;
-            
-            // 二维码点击放大功能
-            const wechatQrCode = document.getElementById('wechatQrCode');
-            const downloadQrCode = document.getElementById('platformQrCode');
-            const qrModal = document.getElementById('qrModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalQrImage = document.getElementById('modalQrImage');
-            const modalClose = document.getElementById('modalClose');
-            
-            // 微信公众号二维码点击事件
-            wechatQrCode.addEventListener('click', function() {
-                const img = this.querySelector('img');
-                if (img && img.src) {
-                    modalTitle.textContent = '微信公众号二维码';
-                    modalQrImage.src = img.src;
-                    qrModal.classList.add('active');
-                }
-            });
-            
-            // 平台下载二维码点击事件
-            downloadQrCode.addEventListener('click', function() {
-                const img = this.querySelector('img');
-                if (img && img.src) {
-                    modalTitle.textContent = '平台下载二维码';
-                    modalQrImage.src = img.src;
-                    qrModal.classList.add('active');
-                }
-            });
-            
-            // 关闭模态框
-            modalClose.addEventListener('click', function() {
-                qrModal.classList.remove('active');
-            });
-            
-            // 点击模态框背景关闭
-            qrModal.addEventListener('click', function(e) {
-                if (e.target === qrModal) {
-                    qrModal.classList.remove('active');
-                }
-            });
-            
             // 移动端菜单切换
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navContainer = document.getElementById('navContainer');
@@ -1287,7 +1196,3 @@
     </script>
 </body>
 </html>
-
-
-
-
